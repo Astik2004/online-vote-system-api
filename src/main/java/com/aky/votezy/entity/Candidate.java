@@ -2,6 +2,8 @@ package com.aky.votezy.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,8 +30,9 @@ public class Candidate {
 	private String party;
 	
 	// To keep track of the number of votes received
-	private int voteCount;
+	private int voteCount=0;
 	
 	@OneToMany(mappedBy = "candidate", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Vote> votes;
 }

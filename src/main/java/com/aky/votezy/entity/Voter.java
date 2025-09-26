@@ -1,4 +1,6 @@
 package com.aky.votezy.entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,5 +35,6 @@ public class Voter {
 	
 	// One-to-one relationship with Vote
 	@OneToOne(mappedBy = "voter", cascade = CascadeType.ALL)
+	@JsonIgnore
 	private Vote vote;
 }

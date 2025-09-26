@@ -50,8 +50,14 @@ public class VoterServiceImp implements VoterService {
 		if(existingVoter == null) {
 			throw new ResourceNotFoundException("Voter with id " + id + " not found.");
 		}
-		existingVoter.setName(updatedVoter.getName());
-		existingVoter.setEmail(updatedVoter.getEmail());
+		if(updatedVoter.getName()!=null)
+		{
+			existingVoter.setName(updatedVoter.getName());
+		}
+		if(updatedVoter.getEmail()!=null)
+		{
+			existingVoter.setEmail(updatedVoter.getEmail());
+		}
 		return voterRepository.save(existingVoter);
 	}
 	@Override
