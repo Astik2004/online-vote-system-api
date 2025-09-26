@@ -1,14 +1,12 @@
 package com.aky.votezy.service;
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.aky.votezy.entity.Candidate;
 import com.aky.votezy.entity.Vote;
 import com.aky.votezy.exception.ResourceNotFoundException;
 import com.aky.votezy.repository.CandidateRepository;
+
 /**
  * CandidateServiceImp implements the CandidateService interface to provide business logic for managing candidates in the election system.<br>
  * It includes methods for adding, retrieving, updating, and deleting candidates.

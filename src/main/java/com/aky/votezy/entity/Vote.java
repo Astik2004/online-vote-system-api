@@ -1,8 +1,6 @@
 package com.aky.votezy.entity;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import io.swagger.v3.core.util.Json;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

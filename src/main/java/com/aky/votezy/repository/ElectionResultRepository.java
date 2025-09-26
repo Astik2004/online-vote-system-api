@@ -13,7 +13,7 @@ import com.aky.votezy.entity.ElectionResult;
  */
 
 @Repository
-public interface ElectionRepository extends JpaRepository<ElectionResult, Long> {
-	Optional<ElectionRepository> findByElectionName(String electionName);
+public interface ElectionResultRepository extends JpaRepository<ElectionResult, Long> {
+	Optional<ElectionResult> findByElectionName(String electionName);
 	
 }

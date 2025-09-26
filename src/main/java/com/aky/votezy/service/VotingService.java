@@ -1,22 +1,14 @@
 package com.aky.votezy.service;
+import java.util.List;
+import com.aky.votezy.entity.Vote;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+/**
+ * VotingService interface defines the contract for voting operations such as casting votes and retrieving vote records.<br>
+ * <b>Author : Er.Astik Yadav</b>
+ */
+public interface VotingService {
+	
+	public Vote castVote(Long voterId, Long candidateId);
+	public List<Vote> getAllVotes();
 
-import com.aky.votezy.repository.CandidateRepository;
-import com.aky.votezy.repository.VoteRepository;
-import com.aky.votezy.repository.VoterRepository;
-
-@Service
-public class VotingService {
-	private VoterRepository voterRepository;
-	private CandidateRepository candidateRepository;
-	private VoteRepository voteRepository;
-	@Autowired
-	public VotingService(VoterRepository voterRepository, CandidateRepository candidateRepository,
-			VoteRepository voteRepository) {
-		this.voterRepository = voterRepository;
-		this.candidateRepository = candidateRepository;
-		this.voteRepository = voteRepository;
-	}
 }

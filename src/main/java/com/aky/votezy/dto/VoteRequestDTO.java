@@ -1,10 +1,13 @@
 package com.aky.votezy.dto;
-
-
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+/** 
+ * VoteRequestDTO represents the data transfer object for casting a vote, containing voter and candidate IDs.<br>
+ * <b>Author : Er.Astik Yadav</b>
+ */
 
 @Data
 @NoArgsConstructor
