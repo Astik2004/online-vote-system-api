@@ -1,14 +1,13 @@
-# Use Java 17 runtime
-FROM eclipse-temurin:17-jdk-alpine
-
-# Set working directory
+# Stage 1: Build
+FROM maven:3.9.4-eclipse-temurin-17 AS build
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-# Copy the JAR file into the container
-COPY target/votezy-app.jar app.jar
-
-# Expose port (Render will set PORT dynamically)
-EXPOSE $PORT
-
-# Start the Spring Boot application
+# Stage 2: Run
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+COPY --from=build /app/target/votezy-app.jar app.jar
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
