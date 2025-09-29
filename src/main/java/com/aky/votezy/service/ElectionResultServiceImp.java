@@ -62,6 +62,7 @@ public class ElectionResultServiceImp implements ElectionResultService {
 		electionResult.setTotalVotes(totalVotes); 
 		electionResult.setWinner(winner); 
 		return electionResultRepository.save(electionResult); 
+		
 	}
 	@Override
 	public List<ElectionResult> getAllElectionResults() {
