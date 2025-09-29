@@ -34,6 +34,7 @@ public class ElectionResultServiceImp implements ElectionResultService {
 		this.voterRepository = voterRepository;
 	}
 	
+	
 	@Override
 	@Transactional
 	public ElectionResult declareElectionResult(String electionName) { 
