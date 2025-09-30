@@ -34,7 +34,7 @@ public class CandidateController {
 		Candidate newCandidate = candidateService.addCandidate(candidate);
 		return new ResponseEntity<>(newCandidate, HttpStatus.CREATED);
 	}
-	@GetMapping()
+	@GetMapping("/all-candidates")
 	public ResponseEntity<List<Candidate>> getAllCandidates() {
 		List<Candidate> candidates = candidateService.getAllCandidates();
 		return new ResponseEntity<>(candidates, HttpStatus.OK);

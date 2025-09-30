@@ -49,7 +49,7 @@ public class VoterController {
 	}
 	
 	// Endpoint to retrieve all voters
-	@GetMapping()
+	@GetMapping("/all/voters")
 	public ResponseEntity<List<Voter>> getAllVoters() {
 		List<Voter> voters = voterService.getAllVoters();
 		return new ResponseEntity<>(voters, HttpStatus.OK);

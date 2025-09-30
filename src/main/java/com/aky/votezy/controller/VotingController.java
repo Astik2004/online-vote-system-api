@@ -39,7 +39,7 @@ public class VotingController {
 	}
 	
 	// Endpoint to retrieve all votes
-	@GetMapping()
+	@GetMapping("/all/votes")
 	public ResponseEntity<List<Vote>> getAllVotes() {
 		List<Vote> votes = votingService.getAllVotes();
 		return new ResponseEntity<>(votes, HttpStatus.OK);

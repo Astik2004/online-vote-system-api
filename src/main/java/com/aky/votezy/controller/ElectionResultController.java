@@ -41,7 +41,7 @@ public class ElectionResultController {
 	}
 	
 	// Endpoint to get all election results
-	@GetMapping()
+	@GetMapping("/all/results")
 	public ResponseEntity<List<ElectionResult>> getAllElectionResults() {
 		List<ElectionResult> results = electionResultService.getAllElectionResults();
 		return ResponseEntity.ok(results);
